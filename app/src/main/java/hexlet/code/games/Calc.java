@@ -1,35 +1,20 @@
-package hexlet.code;
+package hexlet.code.games;
 
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Calc {
     public static void start() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        var userName = scanner.next();
-        System.out.println("Hello, " + userName + " !");
-        System.out.println("What is the result of the expression?");
-
-        var i = 0;
-        while (i < 3) {
+        var task = "What is the result of the expression?";
+        String[][] questionAndAnswer = new String[3][2];
+        for (var i = 0; i < 3; i++) {
             var firstNumber = getRandomNumber();
             var secondNumber = getRandomNumber();
             var operator = getRandomOperator();
             var question = firstNumber + " " + operator + " " + secondNumber;
-            System.out.println("Question: " + question);
-            System.out.print("Your answer: ");
-            var userAnswer = scanner.next();
-            var correctAnswer = calculate(operator, firstNumber, secondNumber);
-            if (!userAnswer.equals(Integer.toString(correctAnswer))) {
-                System.out.println(userAnswer +  "is wrong answer ;(. Correct answer was" + correctAnswer + "\n"
-                        + "Let's try again,! " + userName);
-                i = 0;
-            } else {
-                System.out.println("Correct!");
-                i++;
-            }
+            var correctAnswer = Integer.toString(calculate(operator, firstNumber, secondNumber));
+            questionAndAnswer[i] = new String[] {question, correctAnswer};
         }
+        Engine.start(task, questionAndAnswer);
     }
 
     public static int getRandomNumber() {
