@@ -27,4 +27,10 @@ public class Engine {
         System.out.println("Congratulations, " + userName);
         scanner.close();
     }
+
+    public static int getRandomNumber() {
+        var min = 0;
+        var max = 100;
+        return (int) (Math.random() * ((max - min) + 1) + min);
+    }
 }
