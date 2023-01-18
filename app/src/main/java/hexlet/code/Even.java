@@ -20,7 +20,7 @@ public class Even {
             var correctAnswer = isEven(question);
             if (!userAnswer.equals(correctAnswer)) {
                 System.out.println(userAnswer +  "is wrong answer ;(. Correct answer was" + correctAnswer + "\n"
-                        + "Let's try again, Bill!");
+                        + "Let's try again, " + userName);
                 i = 0;
             } else {
                 System.out.println("Correct");
