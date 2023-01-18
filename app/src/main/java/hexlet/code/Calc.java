@@ -47,8 +47,6 @@ public class Calc {
                 return '*';
             case 1:
                 return '+';
-            case 2:
-                return '/';
             default:
                 return '-';
         }
