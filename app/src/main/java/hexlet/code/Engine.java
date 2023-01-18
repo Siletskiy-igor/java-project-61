@@ -24,7 +24,7 @@ public class Engine {
                 System.out.println("Correct");
             }
         }
-        System.out.println("Congratulations, " + userName);
+        System.out.println("Congratulations, " + userName + "!");
         scanner.close();
     }
 }
