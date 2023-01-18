@@ -1,14 +1,15 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.General;
 
 public class Calc {
     public static void start() {
         var task = "What is the result of the expression?";
         String[][] questionAndAnswer = new String[3][2];
         for (var i = 0; i < 3; i++) {
-            var firstNumber = getRandomNumber();
-            var secondNumber = getRandomNumber();
+            var firstNumber = General.getRandomNumber(0, 100);
+            var secondNumber = General.getRandomNumber(0, 100);
             var operator = getRandomOperator();
             var question = firstNumber + " " + operator + " " + secondNumber;
             var correctAnswer = Integer.toString(calculate(operator, firstNumber, secondNumber));
@@ -16,13 +17,6 @@ public class Calc {
         }
         Engine.start(task, questionAndAnswer);
     }
-
-    public static int getRandomNumber() {
-        var min = 0;
-        var max = 100;
-        return (int) (Math.random() * ((max - min) + 1) + min);
-    }
-
     public static char getRandomOperator() {
         var min = 0;
         var max = 3;

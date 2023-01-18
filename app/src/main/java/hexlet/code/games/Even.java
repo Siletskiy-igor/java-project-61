@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.General;
 
 public class Even {
     public static void start() {
@@ -8,18 +9,12 @@ public class Even {
 
         String[][] questionAndAnswer = new String[3][2];
         for (var i = 0; i < 3; i++) {
-            var number = getRandomNumber();
+            var number = General.getRandomNumber(0, 100);
             var question = Integer.toString(number);
             var correctAnswer = isEven(number);
             questionAndAnswer[i] = new String[] {question, correctAnswer};
         }
         Engine.start(task, questionAndAnswer);
-    }
-
-    public static int getRandomNumber() {
-        var min = 0;
-        var max = 100;
-        return (int) (Math.random() * ((max - min) + 1) + min);
     }
 
     public static String isEven(int userAnswer) {
