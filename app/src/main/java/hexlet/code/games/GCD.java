@@ -11,22 +11,10 @@ public class GCD {
             var firstNumber = General.getRandomNumber(0, 100);
             var secondNumber = General.getRandomNumber(0, 100);
             var question = firstNumber + " " + secondNumber;
-            var gcd = getGCD(firstNumber, secondNumber);
+            var gcd = General.getGCD(firstNumber, secondNumber);
             var correctAnswer = Integer.toString(gcd);
             questionAndAnswer[i] = new String[] {question, correctAnswer};
         }
         Engine.start(task, questionAndAnswer);
-    }
-
-    public static int getGCD(int firstNumber, int secondNumber) {
-        int dividend = Math.max(firstNumber, secondNumber);
-        int divider  = Math.min(firstNumber, secondNumber);
-        while (divider != 0) {
-            var temp = dividend % divider;
-            dividend = divider;
-            divider = temp;
-        }
-        return dividend;
-
     }
 }
