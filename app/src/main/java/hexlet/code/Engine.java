@@ -18,7 +18,7 @@ public class Engine {
             System.out.print("Your answer: ");
             var userAnswer = scanner.next();
             if (!userAnswer.equals(correctAnswer)) {
-                System.out.println(userAnswer +  "is wrong answer ;(. Correct answer was " + correctAnswer + "\n"
+                System.out.println(userAnswer +  " is wrong answer ;(. Correct answer was " + correctAnswer + "\n"
                         + "Let's try again, " + userName);
             } else {
                 System.out.println("Correct");
