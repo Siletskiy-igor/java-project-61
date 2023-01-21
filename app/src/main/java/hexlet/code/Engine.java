@@ -20,6 +20,7 @@ public class Engine {
             if (!userAnswer.equals(correctAnswer)) {
                 System.out.println(userAnswer +  " is wrong answer ;(. Correct answer was " + correctAnswer + "\n"
                         + "Let's try again, " + userName);
+                scanner.close();
             } else {
                 System.out.println("Correct");
             }
