@@ -13,7 +13,7 @@ public class Progression {
             var firstNumber = General.getRandomNumber(0, 100);
             var step = General.getRandomNumber(1, 10);
             String[] progression = General.getProgression(firstNumber, step, progressionLength);
-            var hiddenNumberIndex = General.getRandomNumber(0, 10);
+            var hiddenNumberIndex = General.getRandomNumber(0, 9);
             var correctAnswer = progression[hiddenNumberIndex];
             progression[hiddenNumberIndex] = "..";
             var question = String.join(" ", progression);
