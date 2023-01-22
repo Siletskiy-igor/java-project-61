@@ -6,10 +6,10 @@ import hexlet.code.General;
 public class Calc {
     public static void start() {
         var task = "What is the result of the expression?";
-        String[][] questionAndAnswer = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            var firstNumber = General.getRandomNumber(0, 100);
-            var secondNumber = General.getRandomNumber(0, 100);
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            var firstNumber = General.getRandomNumber(Engine.MIN_OPERATOR_NUMBER, Engine.MAX_OPERATOR_NUMBER);
+            var secondNumber = General.getRandomNumber(Engine.MIN_OPERATOR_NUMBER, Engine.MAX_OPERATOR_NUMBER);
             var operator = General.getRandomOperator();
             var question = firstNumber + " " + operator + " " + secondNumber;
             var correctAnswer = Integer.toString(calculate(operator, firstNumber, secondNumber));

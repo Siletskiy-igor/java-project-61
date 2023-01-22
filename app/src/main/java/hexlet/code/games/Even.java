@@ -7,9 +7,9 @@ public class Even {
     public static void start() {
         var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        String[][] questionAndAnswer = new String[3][2];
+        String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
         for (var i = 0; i < 3; i++) {
-            var number = General.getRandomNumber(0, 100);
+            var number = General.getRandomNumber(Engine.MIN_OPERATOR_NUMBER, Engine.MAX_OPERATOR_NUMBER);
             var question = Integer.toString(number);
             var correctAnswer = General.isEven(number);
             questionAndAnswer[i] = new String[] {question, correctAnswer};
