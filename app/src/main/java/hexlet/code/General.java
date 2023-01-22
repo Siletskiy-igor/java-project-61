@@ -10,8 +10,10 @@ public class General {
     }
 
     public static char getRandomOperator() {
-        var randomNumber = (int) (Math.random() * ((Engine.MAX_OPERATOR_NUMBER - Engine.MIN_OPERATOR_NUMBER) + 1)
-                + Engine.MIN_OPERATOR_NUMBER);
+        final int max = 3;
+        final int min = 0;
+        var randomNumber = (int) (Math.random() * ((max - min) + 1)
+                + min);
         return switch (randomNumber) {
             case 0 -> '*';
             case 1 -> '+';
