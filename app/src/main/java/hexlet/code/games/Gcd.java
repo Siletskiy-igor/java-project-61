@@ -7,7 +7,7 @@ public class Gcd {
     public static void start() {
         var task = "Find the greatest common divisor of given numbers.";
         String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             var firstNumber = General.getRandomNumber(Engine.MIN_OPERATOR_NUMBER, Engine.MAX_OPERATOR_NUMBER);
             var secondNumber = General.getRandomNumber(Engine.MIN_RANDOM_NUMBER, Engine.MAX_RANDOM_NUMBER);
             var question = firstNumber + " " + secondNumber;
