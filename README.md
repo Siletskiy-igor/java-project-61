@@ -6,7 +6,8 @@
 * Прогрессия. Поиск пропущенных чисел в последовательности чисел.
 * Определение четного числа.
 * Определение наибольшего общего делителя.
-* Определение простого числа. 
+* Определение простого числа.
+
   [![asciicast](https://asciinema.org/a/rWvd8mGRnpefTiXSIDQ8lXguJ.svg)](https://asciinema.org/a/rWvd8mGRnpefTiXSIDQ8lXguJ)
   [![asciicast](https://asciinema.org/a/OHINBQ5yoshsqogHRrcF1qEac.svg)](https://asciinema.org/a/OHINBQ5yoshsqogHRrcF1qEac)
   [![asciicast](https://asciinema.org/a/M51gf8aSGUWJTdbbE7G6zs5l7.svg)](https://asciinema.org/a/M51gf8aSGUWJTdbbE7G6zs5l7)
