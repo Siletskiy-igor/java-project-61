@@ -9,13 +9,13 @@ public class Progression {
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX = 10;
     public static final int STEP_MIN = 1;
-    public static String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+    private static final String[][] QUESTION_AND_ANSWER = new String[Engine.ROUNDS_COUNT][2];
 
     public static void start() {
         var task = "What number is missing in the progression?";
 
         generateRoundData();
-        Engine.start(task, questionAndAnswer);
+        Engine.start(task, QUESTION_AND_ANSWER);
     }
 
     public static String[] getProgression(int number, int step, int progressionLength) {
@@ -38,7 +38,7 @@ public class Progression {
             progression[hiddenNumberIndex] = "..";
             var question = String.join(" ", progression);
 
-            questionAndAnswer[i] = new String[] {question, correctAnswer};
+            QUESTION_AND_ANSWER[i] = new String[] {question, correctAnswer};
         }
     }
 }

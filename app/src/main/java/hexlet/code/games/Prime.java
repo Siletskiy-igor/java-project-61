@@ -6,12 +6,12 @@ import hexlet.code.Utils;
 public class Prime {
     public static final int MAX_RANDOM_NUMBER = 100;
     public static final int MIN_RANDOM_NUMBER = 0;
-    public static String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+    private static final String[][] QUESTION_AND_ANSWER = new String[Engine.ROUNDS_COUNT][2];
     public static void start() {
         var task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         generateRoundData();
-        Engine.start(task, questionAndAnswer);
+        Engine.start(task, QUESTION_AND_ANSWER);
     }
 
     public static boolean isPrime(int number) {
@@ -35,7 +35,7 @@ public class Prime {
             var question = Integer.toString(number);
             var correctAnswer = isPrime(number) ? "yes" : "no";
 
-            questionAndAnswer[i] = new String[] {question, correctAnswer};
+            QUESTION_AND_ANSWER[i] = new String[] {question, correctAnswer};
         }
     }
 }

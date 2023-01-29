@@ -6,13 +6,13 @@ import hexlet.code.Utils;
 public class Gcd {
     public static final int MAX_RANDOM_NUMBER = 100;
     public static final int MIN_RANDOM_NUMBER = 0;
-    public static String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
+    private static final String[][] QUESTION_AND_ANSWER = new String[Engine.ROUNDS_COUNT][2];
 
     public static void start() {
         var task = "Find the greatest common divisor of given numbers.";
 
         generateRoundData();
-        Engine.start(task, questionAndAnswer);
+        Engine.start(task, QUESTION_AND_ANSWER);
     }
 
     public static int getGCD(int firstNumber, int secondNumber) {
@@ -36,7 +36,7 @@ public class Gcd {
             var gcd = getGCD(firstNumber, secondNumber);
             var correctAnswer = Integer.toString(gcd);
 
-            questionAndAnswer[i] = new String[] {question, correctAnswer};
+            QUESTION_AND_ANSWER[i] = new String[] {question, correctAnswer};
         }
     }
 }
