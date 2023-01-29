@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
@@ -16,6 +17,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Cli");
         System.out.println("2 - Even");
@@ -25,7 +27,9 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
+
         var gameSelection = scanner.nextInt();
+
         switch (gameSelection) {
             case CLI -> Cli.cli();
             case EVEN -> Even.start();
@@ -33,7 +37,7 @@ public class App {
             case GCD -> Gcd.start();
             case PROGRESSION -> Progression.start();
             case PRIME -> Prime.start();
-            default -> System.out.println("Incorrect input");
+            default -> throw new Error("Incorrect input " + gameSelection + "!");
         }
     }
 }

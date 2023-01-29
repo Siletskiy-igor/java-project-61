@@ -1,4 +1,5 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -8,10 +9,26 @@ public class Progression {
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX = 10;
     public static final int STEP_MIN = 1;
+    public static String[][] questionAndAnswer = new String[Engine.ROUNDS_COUNT][2];
 
     public static void start() {
         var task = "What number is missing in the progression?";
-        String[][] answerAndQuestion = new String[Engine.ROUNDS_COUNT][2];
+
+        generateRoundData();
+        Engine.start(task, questionAndAnswer);
+    }
+
+    public static String[] getProgression(int number, int step, int progressionLength) {
+        String[] progression = new String[progressionLength];
+
+        for (var i = 0; i < progressionLength; i++) {
+            progression[i] = Integer.toString(number);
+            number += step;
+        }
+        return progression;
+    }
+
+    public static void generateRoundData() {
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             var firstNumber = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             var step = Utils.getRandomNumber(STEP_MIN, STEP_MAX);
@@ -20,17 +37,8 @@ public class Progression {
             var correctAnswer = progression[hiddenNumberIndex];
             progression[hiddenNumberIndex] = "..";
             var question = String.join(" ", progression);
-            answerAndQuestion[i] = new String[] {question, correctAnswer};
-        }
-        Engine.start(task, answerAndQuestion);
-    }
 
-    public static String[] getProgression(int number, int step, int progressionLength) {
-        String[] progression = new String[progressionLength];
-        for (var i = 0; i < progressionLength; i++) {
-            progression[i] = Integer.toString(number);
-            number += step;
+            questionAndAnswer[i] = new String[] {question, correctAnswer};
         }
-        return progression;
     }
 }
